@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message MtcUser{
+    string imsi = 1;
+    repeated ExternalId externalIds = 2;
+} 
+
+message ExternalId{
+    string localIdentifier = 1;
+    string domain = 2;
+} 
+
+message Imsi{
+    string imsi = 1;
+} 
+
+message CreateExternalId {
+    string imsi = 1;
+} 
+
+message GetImsiFromExtId {
+    string extId = 1;
+} 
+
+service Einf_Service{
+
+    rpc CreateExternalIdentity (CreateExternalId) returns (ExternalId);
+    rpc GetImsiFromExternalId (GetImsiFromExtId) returns (Imsi);
+} 

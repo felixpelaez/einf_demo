@@ -1,0 +1,5 @@
+FROM scratch
+ADD einf_service einf_service
+EXPOSE 9000
+ENTRYPOINT ["/einf_service"]
+

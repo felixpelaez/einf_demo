@@ -1,0 +1,5 @@
+FROM scratch
+ADD einf_router einf_router
+EXPOSE 8088
+ENTRYPOINT ["/einf_router"]
+
